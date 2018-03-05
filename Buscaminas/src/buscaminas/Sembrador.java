@@ -5,15 +5,21 @@
  */
 package buscaminas;
 
+import java.util.Random;
+
 /**
  *
  * @author Estudiantes
  */
 class Sembrador {
+    
     void sembrarCorazones(Celda[][] celda, int cant){
+        Random ran = new Random(System.currentTimeMillis());
         for(Celda[] laFila:celda){
             for(Celda laCelda:laFila){
-                laCelda.setMiCorazon(new Corazon());
+                if(ran.nextInt(100) >70){
+                    laCelda.setMiCorazon(new Corazon());
+                }
             }
         }
     }
